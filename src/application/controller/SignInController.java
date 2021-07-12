@@ -1,8 +1,6 @@
-package application.view;
+package application.controller;
 
 import application.MainApp;
-import application.model.Account;
-import dao.AccountDao;
 import dao.mysql.AccountDaoImp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

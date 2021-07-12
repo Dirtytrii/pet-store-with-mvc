@@ -1,14 +1,9 @@
 package application;
 
 import application.model.Account;
-import application.view.SignInController;
+import application.controller.SignInController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class MainApp extends Application {
     public static Account account;
