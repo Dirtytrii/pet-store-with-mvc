@@ -18,43 +18,55 @@ public class SignInController {
     @FXML
     private TextField password;
 
-    private Stage signInStage = new Stage();
     private AnchorPane signInBord;
+    private Stage signInStage = new Stage();
 
-    private ProductPanelController productPanelController = new ProductPanelController();
     private MainApp mainApp;
+    private ProductPanelController productPanelController = new ProductPanelController();
 
-    public SignInController() {
 
-    }
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
+        showSignIn();
     }
 
-    public void showSignIn() {
+    //the interface show in MainApp.java
+    //return a AnchorPane to MainApp to show it
+    private void showSignIn() {
         FXMLLoader SignLoader = new FXMLLoader();
-        SignInController controller = new SignInController();
         SignLoader.setLocation(MainApp.class.getResource("view/Signin.fxml"));
         try {
             signInBord = SignLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        //show sign in interface
         signInStage.setScene(new Scene(signInBord));
         signInStage.setTitle("UserLogin");
         signInStage.show();
+
+        signInStage.setOnCloseRequest(event -> {
+            System.out.println("Closing Stage");
+        });
     }
+
     @FXML
-    private void SingIn() {
+    public void SingIn() {
         AccountDaoImp accountDaoImp = new AccountDaoImp();
         mainApp.account = accountDaoImp.findById(user.getText());
 
-        if (mainApp.account != null &&
+        if (user.getText().equals("")) ;
+        else if (password.getText().equals("")) ;
+        else if (mainApp.account != null &&
                 mainApp.account.getPassword().equals(password.getText())) {
-            signInStage.close();
             System.out.println("Success login!");
+            signInStage.hide();
+
+            //wait for sign in
+            //if success login,change scene
+            //change the sign panel to product panel
             productPanelController.setMainApp(mainApp);
+
         } else
             System.out.println("Field to login!");
     }

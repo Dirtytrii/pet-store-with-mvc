@@ -7,7 +7,7 @@
 
 
 <?import javafx.collections.FXCollections?>
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.ProductPanelController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ProductPanelController">
    <children>
       <SplitPane layoutY="82.0" prefHeight="620.0" prefWidth="600.0" />
       <SplitPane layoutX="600.0" layoutY="82.0" prefHeight="620.0" prefWidth="400.0" />

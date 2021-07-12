@@ -27,44 +27,42 @@ public class ProductPanelController {
     @FXML//查询商品类型列
     private ComboBox<String> comboBox;
 
-    private Stage productPanel = new Stage();
-    private AnchorPane anchorPane;
-
+    private Stage productPanelStage = new Stage();
+    private AnchorPane productPane;
     private MainApp mainApp;
     //creat a map used as save cart with type
     private Map<String, Integer> cart = new HashMap<String, Integer>();
-
-    public void initProductPane() {
-        //初始化ComboBox
-        comboBox = new ComboBox<>();
-
-        //add the cart type at comboBox,not work here,it actually worked in ProductPane.fxml
-        for (int i = 0; i < cartType.length; i++)
-            comboBox.setValue(cartType[i]);
-        /*should do something to filed all the pane and massage*/
-
-    }
 
     //only when user successfully login this function will be called
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         initProductPane();
+    }
+
+    public void initProductPane() {
+        //初始化ComboBox
+        comboBox = new ComboBox<>();
+
+        //add the cart type at comboBox but not work here,it actually worked in ProductPane.fxml
+        for (int i = 0; i < cartType.length; i++)
+            comboBox.setValue(cartType[i]);
+        /*should do something to filed all the pane and massage*/
+
+        /*in the end show product panel*/
         showProductPanel();
     }
 
-
-    private void showProductPanel() {
+    public void showProductPanel() {
         FXMLLoader ProductPanelLoader = new FXMLLoader();
         ProductPanelLoader.setLocation(MainApp.class.getResource("view/ProductPanel.fxml"));
         try {
-            anchorPane = ProductPanelLoader.load();
+            productPane = ProductPanelLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        productPanel.setScene(new Scene(anchorPane));
-        productPanel.setTitle("productPanel");
-        productPanel.show();
+        productPanelStage.setScene(new Scene(productPane));
+        productPanelStage.setTitle("productPanel");
+        productPanelStage.show();
     }
 
     @FXML

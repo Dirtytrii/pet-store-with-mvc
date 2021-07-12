@@ -9,10 +9,10 @@
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SignInController">
    <children>
       <TextField fx:id="user" layoutX="215.0" layoutY="95.0" />
-      <TextField fx:id="password" layoutX="215.0" layoutY="168.0" />
       <Label layoutX="110.0" layoutY="100.0" text="用户名：" />
       <Label layoutX="118.0" layoutY="173.0" text="密码：" />
       <Button layoutX="226.0" layoutY="234.0" mnemonicParsing="false" onAction="#SingIn" text="确定" />
       <Button layoutX="367.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleClose" text="关闭" />
+      <PasswordField fx:id="password" layoutX="215.0" layoutY="168.0" />
    </children>
 </AnchorPane>
