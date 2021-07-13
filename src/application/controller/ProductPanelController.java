@@ -67,7 +67,9 @@ public class ProductPanelController {
 
     @FXML
     private void reload() {
-
+        /*System.out.println("Action");
+        productPanelStage.hide();
+        productPanelStage.close();*/
     }
 
     @FXML
