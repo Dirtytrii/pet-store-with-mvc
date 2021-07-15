@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author cloudJiang
+ */
 public class MainApp extends Application {
     public static Account account;
 
