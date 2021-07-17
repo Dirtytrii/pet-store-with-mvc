@@ -19,21 +19,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author DELL
+ */
 public class ProductPanelController {
     private List<Product> products = null;
     private ProductDao dao = new ProductDaoImp();
-    //cart type (just for u to know all the type)
+    /**
+     * cart type (just for u to know all the type)
+     */
     private final String[] cartType = {"鱼类", "狗类", "爬行类", "猫类", "鸟类"};
-    @FXML//查询商品类型列
+    @FXML
     private ComboBox<String> comboBox;
 
     private Stage productPanelStage = new Stage();
     private AnchorPane productPane;
     private MainApp mainApp;
-    //creat a map used as save cart with type
+    /**
+     * creat a map used as save cart with type
+     */
     private Map<String, Integer> cart = new HashMap<String, Integer>();
 
-    //only when user successfully login this function will be called
+    /**
+     * only when user successfully login this function will be called
+     */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         initProductPane();
@@ -44,8 +53,9 @@ public class ProductPanelController {
         comboBox = new ComboBox<>();
 
         //add the cart type at comboBox but not work here,it actually worked in ProductPane.fxml
-        for (int i = 0; i < cartType.length; i++)
+        for (int i = 0; i < cartType.length; i++) {
             comboBox.setValue(cartType[i]);
+        }
         /*should do something to filed all the pane and massage*/
 
         /*in the end show product panel*/
