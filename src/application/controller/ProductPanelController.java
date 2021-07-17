@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -29,6 +31,20 @@ public class ProductPanelController {
     private final String[] cartType = {"鱼类", "狗类", "爬行类", "猫类", "鸟类"};
     @FXML
     private ComboBox<String> comboBox;
+    @FXML
+    private Label productMarketPrice;
+    @FXML
+    private Label productPrice;
+    @FXML
+    private Label productDescription;
+    @FXML
+    private TableColumn productNumber;
+    @FXML
+    private TableColumn productType;
+    @FXML
+    private TableColumn productCNName;
+    @FXML
+    private TableColumn productENName;
 
     private MainApp mainApp;
     /**
@@ -39,7 +55,6 @@ public class ProductPanelController {
     /**
      * only when user successfully login this function will be called
      */
-
 
 
 }
