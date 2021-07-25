@@ -69,4 +69,7 @@ public class ProductPanelController {
 
     }
 
+    private void showProductPanel(){
+
+    }
 }

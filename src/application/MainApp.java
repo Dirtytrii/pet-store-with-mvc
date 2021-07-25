@@ -51,14 +51,15 @@ public class MainApp extends Application {
     private void showLoginPane() throws IOException{
         FXMLLoader loader = new FXMLLoader(
                 MainApp.class.getResource("/application/view/Signin.fxml"));
-        AnchorPane Pane = null;
-        Pane = loader.load();
+        AnchorPane pane = null;
+        pane = loader.load();
 
         SignInController controller = loader.getController();
         controller.setMainApp(this);
 
-        Scene scene = new Scene(Pane);
+        Scene scene = new Scene(pane);
         stage.setScene(scene);
+        stage.setTitle("Login");
         stage.show();
         stage.setOnCloseRequest(event -> {
             System.out.println("Closing Stage");
@@ -66,7 +67,22 @@ public class MainApp extends Application {
     }
 
     public void showProductPanel() {
+        FXMLLoader loader = new FXMLLoader(
+                MainApp.class.getResource("/application/view/ProductPanel.fxml"));
+        AnchorPane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        ProductPanelController controller = loader.getController();
+        controller.setMainApp(this);
+
+        Scene scene = new Scene(pane);
+        stage.setScene(scene);
+        stage.setTitle("Products");
+        stage.show();
     }
 
     public static void main(String[] args) {
