@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -69,7 +70,7 @@ public class MainApp extends Application {
     public void showProductPanel() throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 MainApp.class.getResource("/application/view/ProductPanel.fxml"));
-        AnchorPane pane = null;
+        BorderPane pane = null;
         pane = loader.load();
 
         ProductPanelController controller = loader.getController();

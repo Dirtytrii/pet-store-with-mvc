@@ -32,12 +32,6 @@ public class ProductPanelController {
     @FXML
     private ComboBox<String> comboBox;
     @FXML
-    private Label productMarketPrice;
-    @FXML
-    private Label productPrice;
-    @FXML
-    private Label productDescription;
-    @FXML
     private TableColumn productNumber;
     @FXML
     private TableColumn productType;
@@ -45,6 +39,15 @@ public class ProductPanelController {
     private TableColumn productCNName;
     @FXML
     private TableColumn productENName;
+    /***
+     * only when product is selected,this three label will be fill
+     */
+    @FXML
+    private Label productMarketPrice;
+    @FXML
+    private Label productPrice;
+    @FXML
+    private Label productDescription;
 
     private MainApp mainApp;
 
@@ -66,6 +69,22 @@ public class ProductPanelController {
      * only when user successfully login this function will be called
      */
     private void initPanel(){
+
+    }
+    @FXML
+    private void selectButton(){
+
+    }
+    @FXML
+    private void restartButton(){
+
+    }
+    @FXML
+    private void addToShoppingCart(){
+
+    }
+    @FXML
+    private void checkShoppingCart(){
 
     }
 
