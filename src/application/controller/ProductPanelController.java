@@ -47,6 +47,16 @@ public class ProductPanelController {
     private TableColumn productENName;
 
     private MainApp mainApp;
+
+    public MainApp getMainApp() {
+        return mainApp;
+    }
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+        initPanel();
+    }
+
     /**
      * creat a map used as save cart with type
      */
@@ -55,6 +65,8 @@ public class ProductPanelController {
     /**
      * only when user successfully login this function will be called
      */
+    private void initPanel(){
 
+    }
 
 }

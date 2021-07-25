@@ -34,30 +34,32 @@ public class MainApp extends Application {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    /*
-    cannot new a controller to link mainApp and controller
+
+    /* cannot new a controller to link mainApp and controller
     private SignInController signInController = new SignInController();
     private ProductPanelController productPanelController = new ProductPanelController();*/
 
     @Override
     public void start(Stage primaryStage) {
-        showLoginPane();
-    }
-
-    private void showLoginPane() {
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    MainApp.class.getResource("/view/signin.fxml"));
-            AnchorPane signInPane = loader.load();
-            SignInController controller = loader.getController();
-            controller.setMainApp(this);
-
-            Scene scene = new Scene(signInPane);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
+            showLoginPane();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void showLoginPane() throws IOException{
+        FXMLLoader loader = new FXMLLoader(
+                MainApp.class.getResource("/application/view/Signin.fxml"));
+        AnchorPane Pane = null;
+        Pane = loader.load();
+
+        SignInController controller = loader.getController();
+        controller.setMainApp(this);
+
+        Scene scene = new Scene(Pane);
+        stage.setScene(scene);
+        stage.show();
         stage.setOnCloseRequest(event -> {
             System.out.println("Closing Stage");
         });
