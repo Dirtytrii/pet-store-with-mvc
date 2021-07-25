@@ -39,13 +39,17 @@ public class SignInController {
         mainApp.account = accountDaoImp.findById(user.getText());
 
         if (user.getText().equals("")) {
-            ;
+            System.out.println("user name cant be null");;
         } else if (password.getText().equals("")) {
-            ;
+            System.out.println("password cant be null");;
         } else if (mainApp.account != null &&
                 mainApp.account.getPassword().equals(password.getText())) {
             System.out.println("Success login!");
-            mainApp.showProductPanel();
+            try {
+                mainApp.showProductPanel();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else {
             System.out.println("Field to login!");
         }

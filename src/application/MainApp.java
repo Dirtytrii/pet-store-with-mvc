@@ -48,7 +48,7 @@ public class MainApp extends Application {
         }
     }
 
-    private void showLoginPane() throws IOException{
+    private void showLoginPane() throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 MainApp.class.getResource("/application/view/Signin.fxml"));
         AnchorPane pane = null;
@@ -66,15 +66,11 @@ public class MainApp extends Application {
         });
     }
 
-    public void showProductPanel() {
+    public void showProductPanel() throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 MainApp.class.getResource("/application/view/ProductPanel.fxml"));
         AnchorPane pane = null;
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        pane = loader.load();
 
         ProductPanelController controller = loader.getController();
         controller.setMainApp(this);
