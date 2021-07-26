@@ -9,9 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -29,16 +28,19 @@ public class ProductPanelController {
     private ProductDao dao = new ProductDaoImp();
 
     private final String[] cartType = {"鱼类", "狗类", "爬行类", "猫类", "鸟类"};
+
     @FXML
     private ComboBox<String> comboBox;
     @FXML
-    private TableColumn productNumber;
+    private TableView<Product> productTable;
     @FXML
-    private TableColumn productType;
+    private TableColumn<Product, String> productNumbers = new TableColumn<>();
     @FXML
-    private TableColumn productCNName;
+    private TableColumn<Product, String> productTypes = new TableColumn<>();
     @FXML
-    private TableColumn productENName;
+    private TableColumn<Product, String> productCNNames = new TableColumn<>();
+    @FXML
+    private TableColumn<Product, String> productENNames = new TableColumn<>();
     /***
      * only when product is selected,this three label will be fill
      */
@@ -67,24 +69,41 @@ public class ProductPanelController {
 
     /**
      * only when user successfully login this function will be called
+     * the product table will be fill
      */
-    private void initPanel(){
+    private void initPanel() {
+        //fill the combobox
+        ObservableList<String> types = FXCollections.observableArrayList();
+        comboBox.setTooltip(new Tooltip("Select the type of products"));
+        types.addAll(cartType);
+        comboBox.setItems(types);
+
+        // Initialize the product table with the four columns.
+        products = dao.findAll();
+
+        System.out.println(products.get(0));
+        for (Product product : products) {
+            productNumbers.setCellValueFactory(new MapValueFactory(product.getProductid()));
+        }
+    }
+
+    @FXML
+    private void selectButton() {
 
     }
+
     @FXML
-    private void selectButton(){
+    private void restartButton() {
 
     }
+
     @FXML
-    private void restartButton(){
+    private void addToShoppingCart() {
 
     }
-    @FXML
-    private void addToShoppingCart(){
 
-    }
     @FXML
-    private void checkShoppingCart(){
+    private void checkShoppingCart() {
 
     }
 
