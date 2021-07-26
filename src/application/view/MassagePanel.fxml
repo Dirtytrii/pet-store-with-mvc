@@ -8,11 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="166.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MassagePanelController">
    <children>
-      <Button layoutX="64.0" layoutY="128.0" mnemonicParsing="false" text="确定" />
-      <Button layoutX="187.0" layoutY="128.0" mnemonicParsing="false" text="取消" />
-      <Label layoutX="89.0" layoutY="66.0" prefHeight="48.0" prefWidth="123.0" text="确定要关闭吗？" />
+      <Button layoutX="64.0" layoutY="98.0" mnemonicParsing="false" text="确定" />
+      <Button layoutX="187.0" layoutY="98.0" mnemonicParsing="false" text="取消" />
+      <Label layoutX="89.0" layoutY="35.0" prefHeight="48.0" prefWidth="123.0" text="确定要关闭吗？" />
    </children>
 </AnchorPane>
